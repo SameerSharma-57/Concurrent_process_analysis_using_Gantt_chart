@@ -1,0 +1,203 @@
+USER,PID,%CPU,%MEM,VSZ,RSS,TTY,STAT,START,TIME,COMMAND
+root,1,0.0,0.3,167908,12500,?,Ss,09:18,0:03,/sbin/init splash
+root,2,0.0,0.0,0,0,?,S,09:18,0:00,[kthreadd]
+root,3,0.0,0.0,0,0,?,I<,09:18,0:00,[rcu_gp]
+root,4,0.0,0.0,0,0,?,I<,09:18,0:00,[rcu_par_gp]
+root,5,0.0,0.0,0,0,?,I<,09:18,0:00,[slub_flushwq]
+root,6,0.0,0.0,0,0,?,I<,09:18,0:00,[netns]
+root,8,0.0,0.0,0,0,?,I<,09:18,0:00,[kworker/0:0H-events_highpri]
+root,10,0.0,0.0,0,0,?,I<,09:18,0:00,[mm_percpu_wq]
+root,11,0.0,0.0,0,0,?,I,09:18,0:00,[rcu_tasks_kthread]
+root,12,0.0,0.0,0,0,?,I,09:18,0:00,[rcu_tasks_rude_kthread]
+root,13,0.0,0.0,0,0,?,I,09:18,0:00,[rcu_tasks_trace_kthread]
+root,14,0.0,0.0,0,0,?,S,09:18,0:01,[ksoftirqd/0]
+root,15,0.1,0.0,0,0,?,I,09:18,0:09,[rcu_preempt]
+root,16,0.0,0.0,0,0,?,S,09:18,0:00,[migration/0]
+root,18,0.0,0.0,0,0,?,S,09:18,0:00,[cpuhp/0]
+root,19,0.0,0.0,0,0,?,S,09:18,0:00,[cpuhp/1]
+root,20,0.0,0.0,0,0,?,S,09:18,0:00,[migration/1]
+root,21,0.0,0.0,0,0,?,S,09:18,0:01,[ksoftirqd/1]
+root,26,0.0,0.0,0,0,?,S,09:18,0:00,[kdevtmpfs]
+root,27,0.0,0.0,0,0,?,I<,09:18,0:00,[inet_frag_wq]
+root,28,0.0,0.0,0,0,?,S,09:18,0:00,[kauditd]
+root,30,0.0,0.0,0,0,?,S,09:18,0:00,[khungtaskd]
+root,32,0.0,0.0,0,0,?,S,09:18,0:00,[oom_reaper]
+root,33,0.0,0.0,0,0,?,I<,09:18,0:00,[writeback]
+root,34,0.0,0.0,0,0,?,S,09:18,0:00,[kcompactd0]
+root,35,0.0,0.0,0,0,?,SN,09:18,0:00,[ksmd]
+root,36,0.0,0.0,0,0,?,SN,09:18,0:03,[khugepaged]
+root,37,0.0,0.0,0,0,?,I<,09:18,0:00,[kintegrityd]
+root,38,0.0,0.0,0,0,?,I<,09:18,0:00,[kblockd]
+root,39,0.0,0.0,0,0,?,I<,09:18,0:00,[blkcg_punt_bio]
+root,40,0.0,0.0,0,0,?,I<,09:18,0:00,[tpm_dev_wq]
+root,41,0.0,0.0,0,0,?,I<,09:18,0:00,[edac-poller]
+root,42,0.0,0.0,0,0,?,I<,09:18,0:00,[devfreq_wq]
+root,44,0.0,0.0,0,0,?,I<,09:18,0:00,[kworker/1:1H-kblockd]
+root,45,0.0,0.0,0,0,?,S,09:18,0:00,[kswapd0]
+root,52,0.0,0.0,0,0,?,I<,09:18,0:00,[kthrotld]
+root,54,0.0,0.0,0,0,?,S,09:18,0:00,[irq/24-pciehp]
+root,55,0.0,0.0,0,0,?,S,09:18,0:00,[irq/25-pciehp]
+root,56,0.0,0.0,0,0,?,S,09:18,0:00,[irq/26-pciehp]
+root,57,0.0,0.0,0,0,?,S,09:18,0:00,[irq/27-pciehp]
+root,58,0.0,0.0,0,0,?,S,09:18,0:00,[irq/28-pciehp]
+root,59,0.0,0.0,0,0,?,S,09:18,0:00,[irq/29-pciehp]
+root,60,0.0,0.0,0,0,?,S,09:18,0:00,[irq/30-pciehp]
+root,61,0.0,0.0,0,0,?,S,09:18,0:00,[irq/31-pciehp]
+root,62,0.0,0.0,0,0,?,S,09:18,0:00,[irq/32-pciehp]
+root,63,0.0,0.0,0,0,?,S,09:18,0:00,[irq/33-pciehp]
+root,64,0.0,0.0,0,0,?,S,09:18,0:00,[irq/34-pciehp]
+root,65,0.0,0.0,0,0,?,S,09:18,0:00,[irq/35-pciehp]
+root,66,0.0,0.0,0,0,?,S,09:18,0:00,[irq/36-pciehp]
+root,67,0.0,0.0,0,0,?,S,09:18,0:00,[irq/37-pciehp]
+root,68,0.0,0.0,0,0,?,S,09:18,0:00,[irq/38-pciehp]
+root,69,0.0,0.0,0,0,?,S,09:18,0:00,[irq/39-pciehp]
+root,70,0.0,0.0,0,0,?,S,09:18,0:00,[irq/40-pciehp]
+root,71,0.0,0.0,0,0,?,S,09:18,0:00,[irq/41-pciehp]
+root,72,0.0,0.0,0,0,?,S,09:18,0:00,[irq/42-pciehp]
+root,73,0.0,0.0,0,0,?,S,09:18,0:00,[irq/43-pciehp]
+root,74,0.0,0.0,0,0,?,S,09:18,0:00,[irq/44-pciehp]
+root,75,0.0,0.0,0,0,?,S,09:18,0:00,[irq/45-pciehp]
+root,76,0.0,0.0,0,0,?,S,09:18,0:00,[irq/46-pciehp]
+root,77,0.0,0.0,0,0,?,S,09:18,0:00,[irq/47-pciehp]
+root,78,0.0,0.0,0,0,?,S,09:18,0:00,[irq/48-pciehp]
+root,79,0.0,0.0,0,0,?,S,09:18,0:00,[irq/49-pciehp]
+root,80,0.0,0.0,0,0,?,S,09:18,0:00,[irq/50-pciehp]
+root,81,0.0,0.0,0,0,?,S,09:18,0:00,[irq/51-pciehp]
+root,82,0.0,0.0,0,0,?,S,09:18,0:00,[irq/52-pciehp]
+root,83,0.0,0.0,0,0,?,S,09:18,0:00,[irq/53-pciehp]
+root,84,0.0,0.0,0,0,?,S,09:18,0:00,[irq/54-pciehp]
+root,85,0.0,0.0,0,0,?,S,09:18,0:00,[irq/55-pciehp]
+root,86,0.0,0.0,0,0,?,I<,09:18,0:00,[acpi_thermal_pm]
+root,87,0.0,0.0,0,0,?,S,09:18,0:00,[xenbus_probe]
+root,88,0.0,0.0,0,0,?,I<,09:18,0:00,[mld]
+root,89,0.0,0.0,0,0,?,I<,09:18,0:00,[ipv6_addrconf]
+root,94,0.0,0.0,0,0,?,I<,09:18,0:00,[kstrp]
+root,99,0.0,0.0,0,0,?,I<,09:18,0:00,[zswap-shrink]
+root,100,0.0,0.0,0,0,?,I<,09:18,0:00,[kworker/u65:0-hci0]
+root,148,0.0,0.0,0,0,?,I<,09:18,0:00,[kworker/0:1H-kblockd]
+root,171,0.0,0.0,0,0,?,I<,09:18,0:00,[cryptd]
+root,175,0.0,0.0,0,0,?,I<,09:18,0:00,[mpt_poll_0]
+root,177,0.0,0.0,0,0,?,I<,09:18,0:00,[mpt/0]
+root,181,0.0,0.0,0,0,?,I<,09:18,0:00,[ata_sff]
+root,185,0.0,0.0,0,0,?,S,09:18,0:00,[scsi_eh_0]
+root,186,0.0,0.0,0,0,?,I<,09:18,0:00,[scsi_tmf_0]
+root,187,0.0,0.0,0,0,?,S,09:18,0:01,[irq/16-vmwgfx]
+root,188,0.0,0.0,0,0,?,S,09:18,0:00,[scsi_eh_1]
+root,189,0.0,0.0,0,0,?,I<,09:18,0:00,[scsi_tmf_1]
+root,191,0.0,0.0,0,0,?,S,09:18,0:00,[card0-crtc0]
+root,193,0.0,0.0,0,0,?,S,09:18,0:00,[card0-crtc1]
+root,194,0.0,0.0,0,0,?,S,09:18,0:00,[card0-crtc2]
+root,195,0.0,0.0,0,0,?,S,09:18,0:00,[card0-crtc3]
+root,196,0.0,0.0,0,0,?,S,09:18,0:00,[card0-crtc4]
+root,197,0.0,0.0,0,0,?,S,09:18,0:00,[card0-crtc5]
+root,198,0.0,0.0,0,0,?,S,09:18,0:00,[card0-crtc6]
+root,199,0.0,0.0,0,0,?,S,09:18,0:00,[card0-crtc7]
+root,259,0.0,0.0,0,0,?,S,09:18,0:00,[scsi_eh_2]
+root,260,0.0,0.0,0,0,?,I<,09:18,0:00,[scsi_tmf_2]
+root,298,0.0,0.0,0,0,?,S,09:18,0:00,[jbd2/sda1-8]
+root,299,0.0,0.0,0,0,?,I<,09:18,0:00,[ext4-rsv-conver]
+root,354,0.0,0.7,57772,25156,?,Ss,09:18,0:03,/lib/systemd/systemd-journald
+root,371,0.0,0.0,152260,288,?,Ssl,09:18,0:00,vmware-vmblock-fuse /run/vmblock-fuse -o rw;subtype=vmware-vmblock;default_permissions;allow_other;dev;suid
+root,390,0.0,0.2,27616,7812,?,Ss,09:18,0:02,/lib/systemd/systemd-udevd
+root,468,0.0,0.0,0,0,?,S,09:18,0:00,[irq/56-vmw_vmci]
+root,469,0.0,0.0,0,0,?,S,09:18,0:00,[irq/57-vmw_vmci]
+root,530,0.0,0.0,0,0,?,I<,09:18,0:00,[kworker/1:2H-kblockd]
+root,596,0.0,0.0,0,0,?,I<,09:18,0:00,[kworker/u65:2-hci0]
+root,599,0.0,0.2,8260,7556,?,Ss,09:18,0:00,/usr/sbin/haveged --Foreground --verbose=1
+root,600,0.0,0.0,0,0,?,I<,09:18,0:00,[rpciod]
+root,601,0.0,0.0,0,0,?,I<,09:18,0:00,[xprtiod]
+root,604,0.3,0.3,241188,13160,?,Ssl,09:18,0:16,/usr/bin/vmtoolsd
+root,606,0.0,0.0,6608,2744,?,Ss,09:18,0:00,/usr/sbin/cron -f
+message+,607,0.0,0.1,10560,5956,?,Ss,09:18,0:02,/usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+polkitd,610,0.0,0.2,310116,9968,?,Ssl,09:18,0:02,/usr/lib/polkit-1/polkitd --no-debug
+root,617,0.0,0.2,17244,7920,?,Ss,09:18,0:00,/lib/systemd/systemd-logind
+root,690,0.0,0.6,332176,21472,?,Ssl,09:18,0:00,/usr/sbin/NetworkManager --no-daemon
+root,700,0.0,0.4,317268,14248,?,Ssl,09:18,0:00,/usr/sbin/ModemManager
+root,874,0.0,0.2,382592,7564,?,SLsl,09:18,0:00,/usr/sbin/lightdm
+root,914,0.0,0.0,5872,1056,tty1,Ss+,09:18,0:00,/sbin/agetty -o -p -- \u --noclear - linux
+root,915,2.2,3.8,402928,133224,tty7,Ssl+,09:18,1:56,/usr/lib/xorg/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+mysql,970,0.0,6.7,1275792,234692,?,Ssl,09:18,0:02,/usr/sbin/mariadbd
+rtkit,1181,0.0,0.0,22712,1528,?,SNsl,09:19,0:00,/usr/libexec/rtkit-daemon
+root,1267,0.0,0.2,236224,8240,?,Sl,09:19,0:00,lightdm --session-child 15 26
+kali,1273,0.0,0.3,19184,10936,?,Ss,09:19,0:00,/lib/systemd/systemd --user
+kali,1274,0.0,0.0,168820,3296,?,S,09:19,0:00,(sd-pam)
+kali,1289,0.0,0.3,44464,11608,?,S<sl,09:19,0:00,/usr/bin/pipewire
+kali,1291,0.0,0.9,483052,32960,?,S<sl,09:19,0:02,/usr/bin/wireplumber
+kali,1292,0.0,0.2,26976,8864,?,S<sl,09:19,0:00,/usr/bin/pipewire-pulse
+kali,1293,0.0,0.1,9852,5496,?,Ss,09:19,0:03,/usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+kali,1294,0.0,0.3,313612,11760,?,SLsl,09:19,0:00,/usr/bin/gnome-keyring-daemon --foreground --components=pkcs11;secrets --control-directory=/run/user/1000/keyring
+kali,1324,0.0,0.7,340708,26412,?,Ssl,09:19,0:00,xfce4-session
+kali,1373,0.0,0.0,7904,840,?,Ss,09:19,0:00,/usr/bin/ssh-agent x-session-manager
+kali,1383,0.0,0.3,384876,11516,?,Ssl,09:19,0:00,/usr/libexec/at-spi-bus-launcher
+kali,1390,0.0,0.1,9264,4848,?,S,09:19,0:00,/usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/1000/at-spi/bus_0
+kali,1402,0.0,0.2,238144,9188,?,Sl,09:19,0:00,/usr/libexec/at-spi2-registryd --use-gnome-session
+kali,1413,0.0,0.1,81256,5488,?,SLs,09:19,0:00,/usr/bin/gpg-agent --supervised
+kali,1415,0.8,3.5,968760,123568,?,Sl,09:19,0:44,xfwm4
+kali,1419,0.0,0.3,311296,11692,?,Ssl,09:19,0:00,/usr/libexec/gvfsd
+kali,1425,0.0,0.2,454164,8240,?,Sl,09:19,0:00,/usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f
+kali,1445,0.0,0.8,305068,29424,?,Sl,09:19,0:00,xfsettingsd
+root,1449,0.0,0.2,307520,8764,?,Ssl,09:19,0:01,/usr/libexec/upowerd
+kali,1457,0.0,1.3,548700,47908,?,Sl,09:19,0:02,xfce4-panel
+kali,1462,0.0,0.7,414652,26428,?,Sl,09:19,0:00,Thunar --daemon
+kali,1468,0.0,2.0,500076,72700,?,Sl,09:19,0:02,xfdesktop
+kali,1469,0.0,1.3,465400,48124,?,Sl,09:19,0:01,/usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libwhiskermenu.so 1 14680071 whiskermenu Whisker Menu Show a menu to easily access installed applications
+kali,1476,1.1,0.9,277548,34440,?,Sl,09:19,0:55,/usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libcpugraph.so 13 14680076 cpugraph CPU Graph Graphical representation of the CPU load
+kali,1477,0.0,0.7,413464,26408,?,Sl,09:19,0:00,/usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libsystray.so 14 14680077 systray Status Tray Plugin Provides status notifier items (application indicators) and legacy systray items
+kali,1478,0.4,0.9,423632,32128,?,Sl,09:19,0:24,/usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libgenmon.so 15 14680078 genmon Generic Monitor Show output of a command.
+kali,1479,0.1,1.2,469580,43092,?,Sl,09:19,0:08,/usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libpulseaudio-plugin.so 16 14680079 pulseaudio PulseAudio Plugin Adjust the audio volume of the PulseAudio sound system
+kali,1480,0.0,1.2,472996,43380,?,Sl,09:19,0:00,/usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libnotification-plugin.so 17 14680080 notification-plugin Notification Plugin Notification plugin for the Xfce panel
+kali,1481,0.0,1.2,464976,43632,?,Sl,09:19,0:03,/usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libxfce4powermanager.so 18 14680081 power-manager-plugin Power Manager Plugin Display the battery levels of your devices and control the brightness of your display
+kali,1485,0.0,1.1,464820,41228,?,Sl,09:19,0:00,/usr/lib/x86_64-linux-gnu/xfce4/panel/wrapper-2.0 /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libactions.so 22 14680082 actions Action Buttons Log out; lock or other system actions
+kali,1552,0.0,1.2,471928,42536,?,Ssl,09:19,0:01,/usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd
+kali,1558,0.0,0.3,309524,10524,?,Sl,09:19,0:00,xiccd
+kali,1575,0.0,1.4,567256,50680,?,Sl,09:19,0:00,nm-applet
+kali,1582,0.0,0.0,14648,2420,?,Ssl,09:19,0:00,xcape -e Super_L Control_L Escape
+kali,1584,0.0,0.1,230116,4592,?,Ssl,09:19,0:00,/usr/libexec/dconf-service
+colord,1587,0.0,0.4,316068,15284,?,Ssl,09:19,0:00,/usr/libexec/colord
+kali,1604,0.0,1.0,570828,37164,?,Sl,09:19,0:01,light-locker
+kali,1636,0.0,0.5,259888,19096,?,Sl,09:19,0:00,/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+kali,1658,0.0,0.7,265992,26332,?,Sl,09:19,0:01,xfce4-power-manager
+kali,1694,0.0,0.2,307712,9396,?,Sl,09:19,0:00,/usr/libexec/geoclue-2.0/demos/agent
+kali,1711,0.3,1.2,362152,43496,?,Sl,09:19,0:16,/usr/bin/vmtoolsd -n vmusr --blockFd 3
+kali,1712,0.0,1.5,447708,52912,?,Sl,09:19,0:01,/usr/bin/python3 /usr/bin/blueman-applet
+kali,1873,0.0,0.3,425328,13748,?,Ssl,09:20,0:00,/usr/libexec/gvfs-udisks2-volume-monitor
+root,1877,0.0,0.4,468324,16668,?,Ssl,09:20,0:00,/usr/libexec/udisks2/udisksd
+kali,1924,0.0,0.2,307128,7208,?,Ssl,09:20,0:00,/usr/libexec/gvfs-mtp-volume-monitor
+kali,1930,0.0,0.2,386196,8640,?,Ssl,09:20,0:00,/usr/libexec/gvfs-afc-volume-monitor
+kali,1945,0.0,0.2,308080,7768,?,Ssl,09:20,0:00,/usr/libexec/gvfs-gphoto2-volume-monitor
+kali,1950,0.0,0.2,307188,8484,?,Ssl,09:20,0:00,/usr/libexec/gvfs-goa-volume-monitor
+kali,1973,0.0,0.2,385292,10060,?,Sl,09:20,0:00,/usr/libexec/gvfsd-trash --spawner :1.20 /org/gtk/gvfs/exec_spaw/0
+kali,1996,0.0,0.2,233636,8296,?,Ssl,09:20,0:00,/usr/libexec/gvfsd-metadata
+kali,2016,0.0,0.2,48824,7340,?,Ss,09:20,0:00,/usr/libexec/bluetooth/obexd
+kali,2281,0.0,3.0,440536,105352,?,Sl,09:20,0:02,/usr/bin/qterminal
+kali,2284,0.0,0.1,10192,6384,pts/0,Ss,09:20,0:00,/usr/bin/zsh
+kali,2341,0.9,4.6,38369336,159600,pts/0,Sl+,09:20,0:47,/usr/lib/code-oss/code-oss --no-sandbox --unity-launch --enable-crashpad
+kali,2367,0.0,1.4,33772372,49288,pts/0,S+,09:20,0:00,/usr/lib/code-oss/code-oss --type=zygote --no-zygote-sandbox --no-sandbox --enable-crashpad --enable-crashpad
+kali,2368,0.0,1.3,33772356,48060,pts/0,S+,09:20,0:00,/usr/lib/code-oss/code-oss --type=zygote --no-sandbox --enable-crashpad --enable-crashpad
+kali,2445,0.0,0.5,474176,19692,?,Ssl,09:20,0:00,/usr/libexec/xdg-desktop-portal
+kali,2448,1.9,3.8,33892384,134260,pts/0,Sl+,09:20,1:36,/usr/lib/code-oss/code-oss --type=gpu-process --no-sandbox --enable-crashpad --enable-crash-reporter=99e8ef2e-8491-4701-8869-2e75f143cfa0;no_channel --user-data-dir=/home/kali/.config/Code - OSS --gpu-preferences=WAAAAAAAAAAgAAAIAAAAAAAAAAAAAAAAAABgAAAAAAA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAABAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --shared-files --field-trial-handle=0;i;4440964623536647259;5018498399344578687;131072 --disable-features=CalculateNativeWinOcclusion;SpareRendererForSitePerProcess
+kali,2462,0.0,0.3,608908,11256,?,Ssl,09:21,0:00,/usr/libexec/xdg-document-portal
+kali,2468,0.0,0.2,310380,7752,?,Ssl,09:21,0:00,/usr/libexec/xdg-permission-store
+root,2475,0.0,0.0,2480,936,?,Ss,09:21,0:00,fusermount3 -o rw;nosuid;nodev;fsname=portal;auto_unmount;subtype=portal -- /run/user/1000/doc
+kali,2481,0.0,0.6,409672,20948,?,Ssl,09:21,0:00,/usr/libexec/xdg-desktop-portal-gtk
+kali,2518,0.0,1.8,33829856,65444,pts/0,Sl+,09:21,0:01,/usr/lib/code-oss/code-oss --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --no-sandbox --enable-crashpad --enable-crash-reporter=99e8ef2e-8491-4701-8869-2e75f143cfa0;no_channel --user-data-dir=/home/kali/.config/Code - OSS --standard-schemes=vscode-webview;vscode-file --secure-schemes=vscode-webview;vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview;vscode-file --fetch-schemes=vscode-webview;vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0;i;4440964623536647259;5018498399344578687;131072 --disable-features=CalculateNativeWinOcclusion;SpareRendererForSitePerProcess --enable-crashpad
+kali,2554,6.3,7.8,57132936,271876,pts/0,Sl+,09:21,5:16,/usr/lib/code-oss/code-oss --type=renderer --enable-crashpad --enable-crash-reporter=99e8ef2e-8491-4701-8869-2e75f143cfa0;no_channel --user-data-dir=/home/kali/.config/Code - OSS --standard-schemes=vscode-webview;vscode-file --secure-schemes=vscode-webview;vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview;vscode-file --fetch-schemes=vscode-webview;vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/usr/lib/code-oss/resources/app --no-sandbox --no-zygote --enable-blink-features=HighlightAPI --no-sandbox --lang=en-US --num-raster-threads=1 --renderer-client-id=4 --launch-time-ticks=164124113 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0;i;4440964623536647259;5018498399344578687;131072 --disable-features=CalculateNativeWinOcclusion;SpareRendererForSitePerProcess --vscode-window-config=vscode:c4011204-7d73-4b1c-aec0-e7b2d6aff759 --enable-crashpad
+kali,2644,0.2,4.2,46626704,148324,pts/0,Sl+,09:21,0:13,/usr/lib/code-oss/code-oss --type=renderer --enable-crashpad --enable-crash-reporter=99e8ef2e-8491-4701-8869-2e75f143cfa0;no_channel --user-data-dir=/home/kali/.config/Code - OSS --standard-schemes=vscode-webview;vscode-file --secure-schemes=vscode-webview;vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview;vscode-file --fetch-schemes=vscode-webview;vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/usr/lib/code-oss/resources/app --no-sandbox --no-zygote --node-integration-in-worker --no-sandbox --disable-gpu-compositing --lang=en-US --num-raster-threads=1 --renderer-client-id=5 --launch-time-ticks=171354504 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=0;i;4440964623536647259;5018498399344578687;131072 --disable-features=CalculateNativeWinOcclusion;SpareRendererForSitePerProcess --vscode-window-config=vscode:fbf64938-3a35-4dbb-a788-fadca031870e --vscode-window-kind=shared-process --enable-crashpad
+kali,2645,0.2,3.3,38182296,116644,pts/0,Sl+,09:21,0:12,/usr/lib/code-oss/code-oss --inspect-port=0 /usr/lib/code-oss/resources/app/out/bootstrap-fork --type=extensionHost --skipWorkspaceStorageLock
+kali,2679,0.3,2.4,38190484,84624,pts/0,Sl+,09:21,0:19,/usr/lib/code-oss/code-oss /usr/lib/code-oss/resources/app/out/bootstrap-fork --type=ptyHost --logsPath /home/kali/.config/Code - OSS/logs/20230929T092104
+kali,2741,0.0,2.3,38190476,82856,pts/0,Sl+,09:21,0:01,/usr/lib/code-oss/code-oss /usr/lib/code-oss/resources/app/out/bootstrap-fork --type=fileWatcher
+kali,2860,0.0,0.1,10016,6124,pts/1,Ss+,09:21,0:01,/usr/bin/zsh -i
+kali,3809,0.0,0.1,10200,6420,pts/2,Ss,09:23,0:04,/usr/bin/zsh -i
+root,17381,0.0,0.0,0,0,?,I,09:50,0:00,[kworker/u64:0-flush-8:0]
+root,37664,0.0,0.0,31088,3012,?,Ssl,10:30,0:00,/usr/sbin/pcscd --foreground --auto-exit
+root,37813,0.0,0.0,0,0,?,I,10:31,0:00,[kworker/0:0-ata_sff]
+root,38606,0.5,0.0,0,0,?,I,10:32,0:03,[kworker/1:0-pm]
+root,40338,0.3,0.0,0,0,?,I,10:36,0:01,[kworker/0:2-events]
+root,40893,0.0,0.0,0,0,?,I,10:37,0:00,[kworker/u64:2-ext4-rsv-conversion]
+root,41171,0.4,0.0,0,0,?,I,10:37,0:01,[kworker/1:2-events]
+kali,42164,0.0,0.2,306936,8156,?,Sl,10:39,0:00,/usr/lib/x86_64-linux-gnu/xfce4/xfconf/xfconfd
+root,42993,0.0,0.0,0,0,?,I,10:41,0:00,[kworker/0:1-ata_sff]
+root,43883,0.0,0.0,0,0,?,I,10:43,0:00,[kworker/1:1-events]
+kali,44159,78.8,1.9,287952,67628,pts/2,Sl+,10:43,0:01,python -u /home/kali/prac/os_project/main.py
+kali,44195,0.0,0.0,2576,920,pts/2,S+,10:43,0:00,sh -c ps aux>/home/kali/prac/os_project/data/data.txt
+kali,44196,137,0.1,11228,4832,pts/2,R+,10:43,0:00,ps aux
