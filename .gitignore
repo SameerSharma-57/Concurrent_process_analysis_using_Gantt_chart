@@ -164,3 +164,6 @@ __pycache__/
 
 # Ignore a directory named "data"
 data/
+
+# Ignore a file named os_project.db
+os_project.db
