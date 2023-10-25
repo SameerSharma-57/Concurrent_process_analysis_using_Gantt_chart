@@ -47,27 +47,32 @@ class SystemMonitor(QWidget):
         self.layout = QVBoxLayout()
 
         self.label_cpu = QLabel('Total CPU Usage: ')
+        self.label_cpu.setStyleSheet("font-size: 20px; color: white;")
         self.layout.addWidget(self.label_cpu)
 
         self.label_memory = QLabel('Total Memory Usage: ')
+        self.label_memory.setStyleSheet("font-size: 20px; color: white;")
         self.layout.addWidget(self.label_memory)
 
         self.table = QTableWidget()
         self.table.setColumnCount(5)
-        
+        self.table.setStyleSheet("background-color: white; color: black; font-size: 16px;")
 
         self.table.setHorizontalHeaderLabels(["Select","PID", "Process Name", "CPU %", "Memory Usage"])
         self.layout.addWidget(self.table)
 
         self.sort_cpu_button = QPushButton('Sort by CPU Usage')
+        # self.sort_cpu_button.setStyleSheet("background-color: #4CAF50; color: white; font-size: 16px;")
         self.sort_cpu_button.clicked.connect(self.sort_by_cpu)
         self.layout.addWidget(self.sort_cpu_button)
 
         self.sort_memory_button = QPushButton('Sort by Memory Usage')
+        # self.sort_memory_button.setStyleSheet("background-color: #; color: white; font-size: 16px;")
         self.sort_memory_button.clicked.connect(self.sort_by_memory)
         self.layout.addWidget(self.sort_memory_button)
         
         self.reset_button = QPushButton('Reset')
+        self.reset_button.setStyleSheet("background-color: #e60000; color: black; font-size: 16px;")
         self.reset_button.clicked.connect(self.reset)
         self.layout.addWidget(self.reset_button)
 
