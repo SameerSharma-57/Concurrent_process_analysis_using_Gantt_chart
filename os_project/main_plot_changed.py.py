@@ -250,7 +250,7 @@ class View(QMainWindow):
 
     def setupUI(self):
         self.setWindowTitle("Monitor")
-
+        
         container_frame = QFrame()
         container_layout = QVBoxLayout(container_frame)
 
@@ -269,11 +269,13 @@ class View(QMainWindow):
 
         self.graph_view = pg.GraphicsView()
         self.graph_widget = pg.GraphicsLayout()
+        
         self.graph_view.setCentralItem(self.graph_widget)
         graph_layout.addWidget(self.graph_view)
         self.setCentralWidget(self.graph_view)
         self.plot_item = self.graph_widget.addPlot(title="Bar Graph")
         self.plot_item.setLabel('bottom', 'Time (ms)')
+        self.graph_view.setBackground('w') #### Set white background
 
         self.mini= 1000000
         self.maxi= 0
@@ -292,7 +294,8 @@ class View(QMainWindow):
             self.graph_widget.removeItem(self.lr)
 
     def updatePlot(self):
-        brush = pg.mkBrush(color=(90, 90, 90))
+        brush = pg.mkBrush(color=(255, 255, 255))  # Set the color to white
+
 
         self.plot_item.clear() 
         for j, i in enumerate(self.data):
