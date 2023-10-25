@@ -227,8 +227,33 @@ class InteractiveBarItem(pg.BarGraphItem):
             'memory_percent': process.memory_percent(),
             'create_time': datetime.fromtimestamp(process.create_time()).strftime('%Y-%m-%d %H:%M:%S'),
         }
+        
         msg_box.setText(f"Process ID: {details['pid']}\nName: {details['name']}\nStart Time: {details['create_time']}\nCPU%: {details['cpu_percent']}\nMem%: {details['memory_percent']}\nstatus: {details['status']}")
         # msg_box.setText(details)
+        style = """
+            QMessageBox {
+                background-color: #f5f5f5;  /* Background color */
+                border: 2px solid #333;    /* Border style */
+            }
+            
+            QLabel {
+                font-size: 14px;           /* Font size for labels */
+                color: #333;               /* Text color for labels */
+            }
+        """
+
+    # Format the details using HTML-style formatting
+        formatted_details = (
+        f"<b>PID:</b> {details['pid']}<br>"
+        f"<b>Name:</b> {details['name']}<br>"
+        f"<b>Status:</b> {details['status']}<br>"
+        f"<b>CPU%:</b> {details['cpu_percent']}<br>"
+        f"<b>Mem%:</b> {details['memory_percent']}<br>"
+        f"<b>Start Time:</b> {details['create_time']}<br>"
+        )
+
+        msg_box.setText(formatted_details)
+        msg_box.setStyleSheet(style)
         msg_box.exec_()
 
     def fetch_process_data(self, pid):
@@ -294,7 +319,7 @@ class View(QMainWindow):
             self.graph_widget.removeItem(self.lr)
 
     def updatePlot(self):
-        brush = pg.mkBrush(color=(255, 255, 255))  # Set the color to white
+        brush = pg.mkBrush(color=(90, 90, 90)) 
 
 
         self.plot_item.clear() 
@@ -306,7 +331,7 @@ class View(QMainWindow):
 
             pid = i[0]
             if int(pid) in checked_pids:
-                brush=pg.mkBrush(color=(255, 255, 255))
+                brush=pg.mkBrush(color=(179, 242, 232))   # The highlighted color changed.
             else:
                 brush = pg.mkBrush(color=(90, 90, 90))
             item = InteractiveBarItem(
