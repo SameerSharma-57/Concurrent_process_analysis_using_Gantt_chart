@@ -46,33 +46,56 @@ class SystemMonitor(QWidget):
 
         self.layout = QVBoxLayout()
 
-        self.label_cpu = QLabel('Total CPU Usage: ')
-        self.label_cpu.setStyleSheet("font-size: 20px; color: white;")
+        self.label_cpu = QLabel('Total CPU Usage:-  ')
+        self.label_cpu.setStyleSheet("font-size: 20px; color: #555; background-color: #eee; border: 1px solid #ccc; padding: 10px; border-radius: 10px;")
+        self.label_cpu.setFont(QFont("Montserrat", 16))  # Change "Times New Roman" to your preferred font family and adjust the font size as needed
         self.layout.addWidget(self.label_cpu)
 
-        self.label_memory = QLabel('Total Memory Usage: ')
-        self.label_memory.setStyleSheet("font-size: 20px; color: white;")
+        self.label_memory = QLabel('Total Memory Usage:-  ')
+        self.label_memory.setStyleSheet("font-size: 20px; color: #555; background-color: #eee; border: 1px solid #ccc; padding: 10px; border-radius: 10px;")
+        self.label_memory.setFont(QFont("Montserrat", 16))  # Change "Times New Roman" to your preferred font family and adjust the font size as needed
         self.layout.addWidget(self.label_memory)
+
+        # Make the first part bold
+        self.label_cpu.setStyleSheet("font-size: 20px; color: #555; font-family: 'Montserrat', sans-serif; background-color: #eee; border: 1px solid #ccc; padding: 10px; border-radius: 10px; font-weight: bold;")
+        self.label_memory.setStyleSheet("font-size: 20px; color: #555;font-family: 'Montserrat', sans-serif; background-color: #eee; border: 1px solid #ccc; padding: 10px; border-radius: 10px; font-weight: bold")
+
 
         self.table = QTableWidget()
         self.table.setColumnCount(5)
-        self.table.setStyleSheet("background-color: white; color: black; font-size: 16px;")
 
-        self.table.setHorizontalHeaderLabels(["Select","PID", "Process Name", "CPU %", "Memory Usage"])
+        # Set the stylesheet and font
+        self.table.setStyleSheet(
+            "background-color: #f5f5f5; color: #333; font-size: 16px; font-family: 'Montserrat', sans-serif;"  # Adjust the font family as needed
+            "border: 1px solid #ccc; border-radius: 1px;"
+        )
+
+        self.table.horizontalHeader().setDefaultAlignment(Qt.AlignCenter)
+
+        # Set the section resize mode to make all columns stretch except the first one
+       # Set the section resize modes to make "Select" smaller and "PID" and "Process Name" stretch
+        self.table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeToContents)  # "Select" column
+        self.table.horizontalHeader().setSectionResizeMode(1, QHeaderView.Stretch)  # "PID" column
+        self.table.horizontalHeader().setSectionResizeMode(2, QHeaderView.Stretch)  # "Process Name" column
+        self.table.horizontalHeader().setSectionResizeMode(3, QHeaderView.Stretch) 
+        self.table.horizontalHeader().setSectionResizeMode(4, QHeaderView.Stretch) 
+
+        self.table.horizontalHeader().setStyleSheet("font-family: 'Montserrat', sans-serif; font-size: 14px; background-color: #3498db; color: #fff;")
+        self.table.setHorizontalHeaderLabels(["Select", "PID", "Process Name", "CPU time%", "Memory Usage"])
         self.layout.addWidget(self.table)
 
         self.sort_cpu_button = QPushButton('Sort by CPU Usage')
-        # self.sort_cpu_button.setStyleSheet("background-color: #4CAF50; color: white; font-size: 16px;")
+        self.sort_cpu_button.setStyleSheet("background-color: #3366ff; color: #fff; font-size: 16px;")
         self.sort_cpu_button.clicked.connect(self.sort_by_cpu)
         self.layout.addWidget(self.sort_cpu_button)
 
         self.sort_memory_button = QPushButton('Sort by Memory Usage')
-        # self.sort_memory_button.setStyleSheet("background-color: #; color: white; font-size: 16px;")
+        self.sort_memory_button.setStyleSheet("background-color: #333; color: #fff; font-size: 16px;")
         self.sort_memory_button.clicked.connect(self.sort_by_memory)
         self.layout.addWidget(self.sort_memory_button)
-        
+
         self.reset_button = QPushButton('Reset')
-        self.reset_button.setStyleSheet("background-color: #e60000; color: black; font-size: 16px;")
+        self.reset_button.setStyleSheet("background-color: #e60000; color: #fff; font-size: 16px;")
         self.reset_button.clicked.connect(self.reset)
         self.layout.addWidget(self.reset_button)
 
@@ -95,10 +118,12 @@ class SystemMonitor(QWidget):
 
     def update_process_table(self):
         attrs = ['pid', 'name', 'cpu_percent', 'memory_percent']
-        processes = sorted(ps.process_iter(attrs=attrs),key=lambda x: x.info[attrs[self.mode]], reverse=True)
+        processes = sorted(ps.process_iter(attrs=attrs), key=lambda x: x.info[attrs[self.mode]], reverse=True)
 
         self.table.setRowCount(min(len(processes), 100))
-        self.table.setColumnWidth(0, 50)  
+        self.table.setColumnWidth(0, 50)
+
+        center_alignment = Qt.AlignmentFlag(Qt.AlignCenter)  # Create the center alignment
 
         for i, process in enumerate(processes[:100]):
             pid = process.info['pid']
@@ -107,19 +132,25 @@ class SystemMonitor(QWidget):
             memory_percent = process.info['memory_percent']
 
             checkbox = QCheckBox()
-            checkbox.setChecked(pid in checked_pids) 
-
+            checkbox.setChecked(pid in checked_pids)
+            # checkbox.setAlignment(Qt.AlignCenter)  # Center align the checkbox
             checkbox.clicked.connect(partial(self.checkbox_clicked, pid))
+
 
             self.table.setCellWidget(i, 0, checkbox)
             self.table.setItem(i, 1, QTableWidgetItem(str(pid)))
+            self.table.item(i, 1).setTextAlignment(center_alignment)  # Center align this item
             self.table.setItem(i, 2, QTableWidgetItem(name))
+            self.table.item(i, 2).setTextAlignment(center_alignment)  # Center align this item
             self.table.setItem(i, 3, QTableWidgetItem(f'{cpu_percent:.2f}%'))
+            self.table.item(i, 3).setTextAlignment(center_alignment)  # Center align this item
             self.table.setItem(i, 4, QTableWidgetItem(f'{memory_percent:.2f}%'))
+            self.table.item(i, 4).setTextAlignment(center_alignment)  # Center align this item
 
         for col in range(self.table.columnCount()):
             self.table.resizeColumnToContents(col)
-            
+
+                
     def checkbox_clicked(self, pid, state):
         if state:
             checked_pids.add(pid)
