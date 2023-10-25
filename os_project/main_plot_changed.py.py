@@ -261,6 +261,14 @@ class View(QMainWindow):
 
     def updatePlot(self):
         brush = pg.mkBrush(color=(90, 90, 90))
+        conn = sqlite3.connect(database)
+        cursor = conn.cursor()
+        query = f'select pid from data where name="python3"'
+        cursor.execute(query)
+        special_pids = cursor.fetchall()
+        # print(type(special_pids))
+        for i in range(len(special_pids)):
+            special_pids[i]=special_pids[i][0]
         self.plot_item.clear() 
         for j, i in enumerate(self.data):
             curr = convert_to_seconds(time.ctime().split()[3])
@@ -270,23 +278,29 @@ class View(QMainWindow):
 
             # print("pid",i[0])
             # print("start_time",start_time)
+            
+            if i[0] in special_pids:
+                brush=pg.mkBrush(color=(255, 255, 255))
+            else:
+                brush = pg.mkBrush(color=(90, 90, 90))
             item = InteractiveBarItem(
                 x0=[start_time - self.uptime],
-                y0=j*10,
+                y0=j,
                 width=curr - start_time,
                 height=1,
                 brush=brush,
                 pid=i[0],
             )
-
+            # self.plot_item.addColorBar()
             self.plot_item.addItem(item)
 
-        self.plot_item.setYRange(0, 50)
+        # self.plot_item.setYRange(0, 100)
 
 
     def update_plot_data(self):
 
-        self.update_db()
+        # self.update_db()
+        self.fetch_processes_save()
         self.data = self.extract_db()
         # import numpy as np
         # print((np.array(self.data)))
@@ -328,6 +342,9 @@ class View(QMainWindow):
 
         conn.commit()
         # conn.close()
+        
+    
+        
 
     def fetch_processes_save(self):
         # if not os.path.exists(data_path):
@@ -365,6 +382,15 @@ class View(QMainWindow):
                 cursor.execute("INSERT INTO data VALUES (?,?,?,?,?,?,?)", data)
             except sqlite3.Error as e:
                 print("SQLite error:", e)
+                
+        # query = "select pid from data"
+        # cursor.execute(query)
+        # prev_pids = cursor.fetchall()
+        # query = "delete from data where pid=?"
+        
+        # for prev_pid in prev_pids:
+        #     if prev_pid not in self.all_pids:
+        #         cursor.execute(query,(prev_pid,))
 
         conn.commit()
 
@@ -373,7 +399,7 @@ class View(QMainWindow):
         cursor = conn.cursor()
 
         # cursor.execute('SELECT pid, start FROM data WHERE (start, pid) IN (SELECT start, MIN(pid) FROM data WHERE GROUP BY start) LIMIT 50')
-        cursor.execute('SELECT pid, start FROM data WHERE status IN ("running") AND owner !="root" LIMIT 50')
+        cursor.execute('SELECT pid, start FROM data WHERE status IN ("running","sleeping") AND owner !="root"')
         data = cursor.fetchall()
         return data
 

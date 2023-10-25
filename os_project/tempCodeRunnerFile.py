@@ -1,1 +1,1 @@
-maxi
+conn.cur
