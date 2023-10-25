@@ -66,17 +66,15 @@ class SystemMonitor(QWidget):
 
         # Set the stylesheet and font
         self.table.setStyleSheet(
-            "background-color: #f5f5f5; color: #333; font-size: 16px; font-family: 'Montserrat', sans-serif;"  # Adjust the font family as needed
+            "background-color: #f5f5f5; color: #333; font-size: 16px; font-family: 'Montserrat', sans-serif;"  
             "border: 1px solid #ccc; border-radius: 1px;"
         )
 
         self.table.horizontalHeader().setDefaultAlignment(Qt.AlignCenter)
 
-        # Set the section resize mode to make all columns stretch except the first one
-       # Set the section resize modes to make "Select" smaller and "PID" and "Process Name" stretch
-        self.table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeToContents)  # "Select" column
-        self.table.horizontalHeader().setSectionResizeMode(1, QHeaderView.Stretch)  # "PID" column
-        self.table.horizontalHeader().setSectionResizeMode(2, QHeaderView.Stretch)  # "Process Name" column
+        self.table.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeToContents)  
+        self.table.horizontalHeader().setSectionResizeMode(1, QHeaderView.Stretch)  
+        self.table.horizontalHeader().setSectionResizeMode(2, QHeaderView.Stretch)  
         self.table.horizontalHeader().setSectionResizeMode(3, QHeaderView.Stretch) 
         self.table.horizontalHeader().setSectionResizeMode(4, QHeaderView.Stretch) 
 
@@ -123,7 +121,7 @@ class SystemMonitor(QWidget):
         self.table.setRowCount(min(len(processes), 100))
         self.table.setColumnWidth(0, 50)
 
-        center_alignment = Qt.AlignmentFlag(Qt.AlignCenter)  # Create the center alignment
+        center_alignment = Qt.AlignmentFlag(Qt.AlignCenter)  
 
         for i, process in enumerate(processes[:100]):
             pid = process.info['pid']
@@ -133,19 +131,19 @@ class SystemMonitor(QWidget):
 
             checkbox = QCheckBox()
             checkbox.setChecked(pid in checked_pids)
-            # checkbox.setAlignment(Qt.AlignCenter)  # Center align the checkbox
+            # checkbox.setAlignment(Qt.AlignCenter)  
             checkbox.clicked.connect(partial(self.checkbox_clicked, pid))
 
 
             self.table.setCellWidget(i, 0, checkbox)
             self.table.setItem(i, 1, QTableWidgetItem(str(pid)))
-            self.table.item(i, 1).setTextAlignment(center_alignment)  # Center align this item
+            self.table.item(i, 1).setTextAlignment(center_alignment)  
             self.table.setItem(i, 2, QTableWidgetItem(name))
-            self.table.item(i, 2).setTextAlignment(center_alignment)  # Center align this item
+            self.table.item(i, 2).setTextAlignment(center_alignment)  
             self.table.setItem(i, 3, QTableWidgetItem(f'{cpu_percent:.2f}%'))
-            self.table.item(i, 3).setTextAlignment(center_alignment)  # Center align this item
+            self.table.item(i, 3).setTextAlignment(center_alignment)  
             self.table.setItem(i, 4, QTableWidgetItem(f'{memory_percent:.2f}%'))
-            self.table.item(i, 4).setTextAlignment(center_alignment)  # Center align this item
+            self.table.item(i, 4).setTextAlignment(center_alignment)  
 
         for col in range(self.table.columnCount()):
             self.table.resizeColumnToContents(col)
