@@ -63,6 +63,14 @@ class SystemMonitor(QWidget):
         # Make the first part bold
         self.label_cpu.setStyleSheet("font-size: 20px; color: #555; font-family: 'Montserrat', sans-serif; background-color: #eee; border: 1px solid #ccc; padding: 10px; border-radius: 10px; font-weight: bold;")
         self.label_memory.setStyleSheet("font-size: 20px; color: #555;font-family: 'Montserrat', sans-serif; background-color: #eee; border: 1px solid #ccc; padding: 10px; border-radius: 10px; font-weight: bold")
+        
+        self.pid_dropdown = QComboBox() #dropdown for list of prcesses
+        self.pid_dropdown.currentIndexChanged.connect(self.pid_selected) # activates when a pid is selected
+        self.layout.addWidget(self.pid_dropdown)
+
+        self.searchBar = QLineEdit()
+        self.searchBar.textChanged.connect(self.searchTable)
+        self.layout.addWidget(self.searchBar)
 
 
         self.table = QTableWidget()
@@ -73,6 +81,8 @@ class SystemMonitor(QWidget):
             "background-color: #f5f5f5; color: #333; font-size: 16px; font-family: 'Montserrat', sans-serif;"  
             "border: 1px solid #ccc; border-radius: 1px;"
         )
+
+
 
         self.table.horizontalHeader().setDefaultAlignment(Qt.AlignCenter)
 
@@ -108,6 +118,37 @@ class SystemMonitor(QWidget):
         self.timer.timeout.connect(self.update_info)
         self.timer.start(1000) 
 
+    def pid_selected(self, index):
+        if index > 0:  # To avoid processing the "Select PID" placeholder
+            selected_pid = int(self.pid_dropdown.itemText(index))
+            self.display_process_details(selected_pid)
+
+
+    def searchTable(self):
+        search_text = self.searchBar.text().lower()
+        for row in range(self.table.rowCount()):
+            row_text = self.table.item(row, 2).text().lower()
+            if search_text in row_text:
+                self.table.showRow(row)
+            else:
+                self.table.hideRow(row)
+
+    def display_process_details(self, selected_pid):
+        msg_box = QMessageBox()
+        msg_box.setWindowTitle(f"Details for PID {selected_pid}")
+        spid=int(selected_pid)
+        process = ps.Process(spid)
+        details = {
+            'pid': spid,
+            'name': process.name(),
+            'status': process.status(),
+            'cpu_percent': process.cpu_percent(interval=1),  
+            'memory_percent': process.memory_percent(),
+            'create_time': datetime.fromtimestamp(process.create_time()).strftime('%Y-%m-%d %H:%M:%S'),
+        }
+        msg_box.setText(f"Process ID: {details['pid']}\nName: {details['name']}\nStart Time: {details['create_time']}\nCPU%: {details['cpu_percent']}\nMem%: {details['memory_percent']}\nstatus: {details['status']}")
+        msg_box.exec_()
+
     def update_info(self):
         cpu_percent = ps.cpu_percent(interval=0)
         memory_info = ps.virtual_memory()
@@ -116,8 +157,16 @@ class SystemMonitor(QWidget):
         self.label_memory.setText(f'Total Memory Usage: {self.format_bytes(memory_info.used)} / {self.format_bytes(memory_info.total)}')
 
         self.update_process_table()
+        self.update_pid_dropdown()
 
+    def update_pid_dropdown(self):
+        attrs = ['pid', 'name', 'cpu_percent', 'memory_percent']
+        processes = sorted(ps.process_iter(attrs=attrs), key=lambda x: x.info[attrs[self.mode]], reverse=False) # looks better
 
+        pids = [process.info['pid'] for process in processes]
+        self.pid_dropdown.clear()
+        self.pid_dropdown.addItems(map(str, pids))
+        
     def update_process_table(self):
         attrs = ['pid', 'name', 'cpu_percent', 'memory_percent']
         processes = sorted(ps.process_iter(attrs=attrs), key=lambda x: x.info[attrs[self.mode]], reverse=True)
@@ -287,7 +336,7 @@ class View(QMainWindow):
         self.checkbox.stateChanged.connect(self.clickBox)
         self.graph_cbox = QComboBox()
         self.graph_cbox.setMinimumSize(QSize(150, 0))
-
+        
         container_layout.addWidget(self.label)
         container_layout.addWidget(self.checkbox)
         container_layout.addWidget(self.graph_cbox)
